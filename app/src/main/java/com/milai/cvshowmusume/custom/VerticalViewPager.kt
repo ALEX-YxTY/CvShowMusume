@@ -1,4 +1,4 @@
-package com.milai.cvshowmusume
+package com.milai.cvshowmusume.custom
 
 import android.content.Context
 import android.support.v4.view.ViewPager
@@ -6,7 +6,7 @@ import android.util.AttributeSet
 import android.view.MotionEvent
 
 /**
- * Created by Administrator on 2018/1/5.
+ * Created by Administrator on 2018/a/5.
  *
  * 主要功能：纵向滚动Viewpager
  * 修改touchEvent的x,y坐标，使其会换（要根据宽高乘以相应比例，以免超出边界）

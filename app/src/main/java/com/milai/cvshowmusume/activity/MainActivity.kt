@@ -1,8 +1,9 @@
-package com.milai.cvshowmusume
+package com.milai.cvshowmusume.activity
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ScrollView
+import android.support.v7.app.AppCompatActivity
+import com.milai.cvshowmusume.R
+import com.milai.cvshowmusume.custom.VerticalViewPager
 
 class MainActivity : AppCompatActivity() {
 
@@ -12,8 +13,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         // 修改
-        vp.overScrollMode = ScrollView.OVER_SCROLL_NEVER
-        vp.setPageTransformer(true, VerticalPageTransformer())
+//        vp.overScrollMode = ScrollView.OVER_SCROLL_NEVER
+//        vp.setPageTransformer(true, VerticalPageTransformer())
+
 
     }
 }
