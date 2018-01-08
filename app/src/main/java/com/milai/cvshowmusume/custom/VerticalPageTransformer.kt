@@ -11,7 +11,7 @@ import android.view.View
  */
 class VerticalPageTransformer:ViewPager.PageTransformer {
 
-    override fun transformPage(page: View?, position: Float) {
+    override fun transformPage(page: View, position: Float) {
         //position=-a 移出页  =0 当前页  =a 移入页
 
 
@@ -21,8 +21,9 @@ class VerticalPageTransformer:ViewPager.PageTransformer {
         } else if (-1 < position && position < 0) {
             alpha = position + 1
         }
-        page?.alpha = alpha
+//        page?.alpha = alpha
         page?.translationX = page?.width!! * -position
         page.translationY = position * page.height
     }
+
 }

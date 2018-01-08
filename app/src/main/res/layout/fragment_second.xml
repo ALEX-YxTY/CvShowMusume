@@ -1,0 +1,70 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.milai.cvshowmusume.fragment.SecondFragment">
+
+    <ImageView
+        android:id="@+id/iv_head"
+        android:layout_width="520dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-180dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/a"/>
+    
+    <LinearLayout
+        android:id="@+id/ll_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:layout_below="@+id/iv_head"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/bt_gcjp"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:text="馆&#12288;藏&#12288;精&#12288;品"
+            android:padding="2dp"
+            android:textSize="20sp"
+            android:textColor="#444444"
+            android:background="#ffffff"
+            />
+        <View
+            android:layout_width="160dp"
+            android:layout_height="match_parent"/>
+        <Button
+            android:id="@+id/bt_zx"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:text="展&#12288;&#12288;&#12288;&#12288;&#12288;讯"
+            android:padding="2dp"
+            android:textSize="20sp"
+            android:textColor="#444444"
+            android:background="#ffffff"
+            />
+        <View
+            android:layout_width="160dp"
+            android:layout_height="match_parent"/>
+        <Button
+            android:id="@+id/bt_bzxz"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:text="办&#12288;展&#12288;须&#12288;知"
+            android:padding="2dp"
+            android:textSize="20sp"
+            android:textColor="#444444"
+            android:background="#ffffff"
+            />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="22dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/ll_bt"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/logo"/>
+
+</RelativeLayout>

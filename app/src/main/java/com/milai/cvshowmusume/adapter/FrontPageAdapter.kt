@@ -9,7 +9,7 @@ import android.support.v4.app.FragmentPagerAdapter
  *
  * 功能介绍：
  */
-class FrontPageAdapter(fm: FragmentManager?,val dataList:List<Fragment>) : FragmentPagerAdapter(fm) {
+class FrontPageAdapter(fm: FragmentManager?, private val dataList:List<Fragment>) : FragmentPagerAdapter(fm) {
 
     /**
      * Return the Fragment associated with a specified position.

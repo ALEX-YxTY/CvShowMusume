@@ -18,8 +18,7 @@ class FirstFragment: Fragment() {
     var fragView: View? = null
     var iv: ImageView? = null
 
-
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         if (fragView == null) {
             fragView = inflater!!.inflate(R.layout.frag_first, container, false)
             iv = fragView?.findViewById(R.id.iv)
