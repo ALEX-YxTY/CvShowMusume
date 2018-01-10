@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <!--首页-->
+        <!-- 首页 -->
         <activity
             android:name=".activity.MainActivity"
             android:screenOrientation="landscape"
@@ -22,11 +22,20 @@
             </intent-filter>
         </activity>
 
-        <!--内页-->
+        <!-- 内页 -->
         <activity
             android:name=".activity.InsideActivity"
             android:screenOrientation="landscape"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!-- 馆藏精品详情页 -->
+        <activity
+            android:name=".activity.GCDetailActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!--展讯详情页-->
+        <activity android:name=".activity.ZXDetailActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
     </application>
 
 </manifest>

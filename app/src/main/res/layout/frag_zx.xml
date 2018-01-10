@@ -1,10 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:paddingLeft="48dp"
+    android:paddingTop="75dp"
+    android:background="#ffffff">
     <TextView
+        android:id="@+id/component1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="lkajflkjslkdjflskdfj"/>
+        android:text="展讯"
+        android:textSize="35sp"
+        android:textColor="@color/tv_grey"/>
+    <View
+        android:id="@+id/divider"
+        android:layout_width="6dp"
+        android:layout_height="36dp"
+        android:background="@color/tv_grey"
+        android:layout_below="@id/component1"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="2dp"/>
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:maxWidth="350dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/tv_grey"
+        android:textSize="16sp"
+        android:layout_below="@id/divider"
+        android:layout_marginTop="15dp" />
+
+    <TextView
+        android:id="@+id/tv_zb"
+        android:layout_below="@id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:textSize="13sp"
+        android:textColor="@color/tv_grey"/>
+    <TextView
+        android:id="@+id/tv_cb"
+        android:layout_below="@id/tv_zb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="13sp"
+        android:textColor="@color/tv_grey"/>
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_below="@id/tv_cb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="13sp"
+        android:textColor="@color/tv_grey"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="42dp"
+        android:layout_marginLeft="340dp"
+        android:clipChildren="false"
+        >
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="200dp"
+            android:clipChildren="false"
+            />
+
+    </RelativeLayout>
+
 
 </RelativeLayout>

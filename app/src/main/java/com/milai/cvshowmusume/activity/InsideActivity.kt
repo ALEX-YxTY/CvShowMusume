@@ -10,12 +10,20 @@ import android.util.Log
 import android.widget.FrameLayout
 import android.widget.TextView
 import com.milai.cvshowmusume.R
+import com.milai.cvshowmusume.fragment.FragCZXZ
+import com.milai.cvshowmusume.fragment.FragGCJP
 import com.milai.cvshowmusume.fragment.FragmentZX
 
-class InsideActivity : AppCompatActivity() {
+class InsideActivity : AppCompatActivity(),FragCZXZ.onBackListener {
 
     private val tabLayout: TabLayout by lazy{ findViewById<TabLayout>(R.id.tabLayout) }
     private val fragZX : Fragment by lazy{ FragmentZX()}
+    private val fragGCJP : Fragment by lazy{ FragGCJP()}
+    private val fragCZXZ : Fragment by lazy{
+        FragCZXZ()
+    }
+
+    private val select:Int by lazy { intent.getIntExtra("select", 0) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,9 +46,8 @@ class InsideActivity : AppCompatActivity() {
             tab?.setCustomView(R.layout.item_tab)
             val textView: TextView? = tab?.customView?.findViewById(R.id.tv_tab)
             textView?.text = Html.fromHtml(nameList[it])
-            tabLayout.addTab(tab, it, it == 1)
+            tabLayout.addTab(tab, it, it == select + 1)
         }
-        supportFragmentManager.beginTransaction().add(R.id.frame, fragZX).commit()
     }
 
     private fun showTab(tab:TabLayout.Tab?) {
@@ -55,16 +62,21 @@ class InsideActivity : AppCompatActivity() {
             2 -> {
                 //馆藏精品
                 transaction = supportFragmentManager.beginTransaction()
-                transaction.replace(R.id.frame, fragZX)
+                transaction.replace(R.id.frame, fragGCJP)
 
             }
             3 -> {
                 //观展须知
-
+                transaction = supportFragmentManager.beginTransaction()
+                transaction.replace(R.id.frame, fragCZXZ)
             }
         }
         if (transaction != null) {
             transaction.commit()
         }
+    }
+
+    override fun onBackPress() {
+        onBackPressed()
     }
 }

@@ -3,8 +3,122 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
+        android:id="@+id/component1"
+        android:layout_marginTop="60dp"
+        android:textSize="35sp"
+        android:textColor="@color/tv_grey"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="lkajflkjslkdjflskdfj"/>
+        android:text="办展须知"
+        android:layout_centerHorizontal="true"/>
+
+    <RelativeLayout
+        android:id="@+id/rl_main"
+        android:layout_width="520dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/component1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp">
+
+        <TextView
+            android:id="@+id/component2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/tv_grey"
+            android:textSize="11sp"
+            android:layout_marginLeft="30dp"
+            android:text="sdflkjlksfjklsdjfljlksdjfljsldfjlkjsdlkfjlksdjflkjsldjflksdjlfjlskdjflkjsdlfjlksjdflkjsldkfjlskldfjlksdjflkslkdfjlsjdlkfjsjdklflksdjlfk"/>
+        <TextView
+            android:id="@+id/component3"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textColor="@color/tv_grey"
+            android:layout_marginLeft="30dp"
+            android:layout_below="@id/component2"
+            android:layout_marginTop="25dp"
+            android:text="sjdfkljsldjfljsldfjlkjsldkfjlsjdlfjlsdjfljklsdjfkldflksjdfsd"/>
+
+        <View
+            android:layout_width="6dp"
+            android:layout_height="6dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/shape_point"
+            android:layout_alignTop="@id/component3"/>
+        <TextView
+            android:id="@+id/component4"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textColor="@color/tv_grey"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@id/component3"
+            android:text="lskjdfjdslkfjlsjdlfkjlsdjfljslkdfjlsdjlfjlsdfljsdlfjlsdjfjlkdjflkjsdflkjlsdjflkdsjflksdklfj"/>
+
+
+        <View
+            android:layout_width="6dp"
+            android:layout_height="6dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/shape_point"
+            android:layout_alignTop="@id/component3"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="222dp"/>
+
+
+        <TextView
+            android:id="@+id/component5"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textColor="@color/tv_grey"
+            android:layout_marginLeft="30dp"
+            android:layout_below="@id/component3"
+            android:layout_marginTop="35dp"
+            android:text="ksdjflksjdlfkjlksdjflkjslkdfjlsjdflkjlskdjfjslkdfjlksdjfddddddddddddddddlskjdflkjslkdjflksjdflkjdsl"/>
+
+        <View
+            android:layout_width="6dp"
+            android:layout_height="6dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/shape_point"
+            android:layout_alignTop="@id/component5"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/tv_grey"
+        android:layout_below="@id/rl_main"
+        android:text="klsdjfljsdlfjlsjdlfjlsdjlfjlsdjfls"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="42dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:text="返回"
+        android:textSize="18sp"
+        android:background="@color/tv_grey"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:layout_marginLeft="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40dp"/>
+
+    <ImageView
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:src="@drawable/back_pic"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/tv_back"
+        android:layout_marginLeft="10dp"/>
 
 </RelativeLayout>

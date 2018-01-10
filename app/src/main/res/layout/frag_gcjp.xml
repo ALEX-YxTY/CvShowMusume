@@ -1,10 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="60dp"
+    android:paddingTop="75dp"
+    android:background="#ffffff">
+
     <TextView
+        android:id="@+id/component1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="lkajflkjslkdjflskdfj"/>
+        android:text="馆藏精品"
+        android:textSize="35sp"
+        android:textColor="@color/tv_grey"/>
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:maxWidth="350dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/tv_grey"
+        android:textSize="16sp"
+        android:layout_below="@id/component1"
+        android:layout_marginTop="60dp" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_below="@id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="13sp"
+        android:textColor="@color/tv_grey"/>
+    <TextView
+        android:id="@+id/tv_address"
+        android:layout_below="@id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="13sp"
+        android:textColor="@color/tv_grey"/>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="330dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="70dp"
+        android:layout_marginLeft="400dp"
+        android:clipChildren="false"
+        >
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="100dp"
+            android:clipChildren="false"
+            />
+
+    </RelativeLayout>
 
 </RelativeLayout>

@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import com.milai.cvshowmusume.R
 import com.milai.cvshowmusume.activity.InsideActivity
 
@@ -23,7 +24,7 @@ class SecondFragment : Fragment(),View.OnClickListener {
         if (fragView == null) {
             fragView = inflater!!.inflate(R.layout.fragment_second, container, false)
             fragView?.findViewById<Button>(R.id.bt_gcjp)?.setOnClickListener(this)
-            fragView?.findViewById<Button>(R.id.bt_zx)?.setOnClickListener(this)
+            fragView?.findViewById<TextView>(R.id.bt_zx)?.setOnClickListener(this)
             fragView?.findViewById<Button>(R.id.bt_bzxz)?.setOnClickListener(this)
         }
         return fragView
