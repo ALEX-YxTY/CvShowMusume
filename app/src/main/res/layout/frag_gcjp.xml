@@ -3,8 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="60dp"
-    android:paddingTop="75dp"
+    android:paddingLeft="73dp"
+    android:paddingTop="60dp"
     android:background="#ffffff">
 
     <TextView
@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="馆藏精品"
-        android:textSize="35sp"
+        android:textSize="34sp"
         android:textColor="@color/tv_grey"/>
 
     <TextView
@@ -21,7 +21,7 @@
         android:maxWidth="350dp"
         android:layout_height="wrap_content"
         android:textColor="@color/tv_grey"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:layout_below="@id/component1"
         android:layout_marginTop="60dp" />
 
@@ -30,7 +30,7 @@
         android:layout_below="@id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:textSize="13sp"
         android:textColor="@color/tv_grey"/>
     <TextView
@@ -45,10 +45,10 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="330dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="70dp"
-        android:layout_marginLeft="400dp"
+        android:layout_height="340dp"
+        android:layout_marginLeft="450dp"
+        android:layout_alignTop="@id/component1"
+        android:layout_marginTop="10dp"
         android:clipChildren="false"
         >
 
@@ -57,8 +57,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
-            android:layout_marginRight="100dp"
+            android:layout_marginRight="200dp"
             android:clipChildren="false"
+            android:background="@color/tv_grey"
             />
 
     </RelativeLayout>

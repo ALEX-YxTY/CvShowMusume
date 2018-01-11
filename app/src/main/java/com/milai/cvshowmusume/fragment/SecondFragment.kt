@@ -3,6 +3,7 @@ package com.milai.cvshowmusume.fragment
 import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,9 +23,11 @@ class SecondFragment : Fragment(),View.OnClickListener {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         if (fragView == null) {
-            fragView = inflater!!.inflate(R.layout.fragment_second, container, false)
+            fragView = inflater!!.inflate(R.layout.frag_second, container, false)
             fragView?.findViewById<Button>(R.id.bt_gcjp)?.setOnClickListener(this)
-            fragView?.findViewById<TextView>(R.id.bt_zx)?.setOnClickListener(this)
+            val btZx = fragView?.findViewById<Button>(R.id.bt_zx)
+            btZx?.text = Html.fromHtml("展&#12288;&#12288;讯")
+            btZx?.setOnClickListener(this)
             fragView?.findViewById<Button>(R.id.bt_bzxz)?.setOnClickListener(this)
         }
         return fragView

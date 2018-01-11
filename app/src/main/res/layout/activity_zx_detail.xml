@@ -20,6 +20,7 @@
 
 
         <ImageView
+            android:id="@+id/component5"
             android:layout_toRightOf="@id/iv_logo"
             android:layout_marginLeft="10dp"
             android:layout_centerVertical="true"
@@ -48,29 +49,37 @@
             android:layout_marginTop="100dp"
             android:text="lskjdflksjdlkf"/>
 
-        <TextView
-            android:id="@+id/tv_detail"
+        <ScrollView
+            android:layout_width="230dp"
+            android:layout_height="360dp"
             android:layout_below="@id/tv_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:text="lsjflksjdlflsldfj"
-            android:layout_marginTop="70dp"
-            android:textColor="@color/tv_grey"/>
+            android:layout_marginTop="60dp"
+            android:scrollbars="none"
+            android:background="#2200ff00"
+            >
+            <TextView
+                android:id="@+id/tv_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="lsjflksjdlflsldfj"
+                android:textColor="@color/tv_grey"/>
+        </ScrollView>
+
 
 
         <RelativeLayout
-            android:layout_width="360dp"
-            android:layout_height="360dp"
+            android:layout_width="500dp"
+            android:layout_height="500dp"
             android:layout_marginTop="70dp"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="60dp"
+            android:layout_marginRight="100dp"
             android:padding="10dp"
             android:clipChildren="false">
             <ImageView
                 android:id="@+id/iv"
                 android:layout_width="wrap_content"
-                android:maxWidth="340dp"
+                android:maxWidth="470dp"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:scaleType="fitCenter"

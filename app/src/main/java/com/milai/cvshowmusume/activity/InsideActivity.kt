@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentTransaction
 import android.text.Html
 import android.util.Log
 import android.widget.FrameLayout
+import android.widget.ImageView
 import android.widget.TextView
 import com.milai.cvshowmusume.R
 import com.milai.cvshowmusume.fragment.FragCZXZ
@@ -28,6 +29,7 @@ class InsideActivity : AppCompatActivity(),FragCZXZ.onBackListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_inside)
+        findViewById<ImageView>(R.id.component5).setOnClickListener { onBackPressed() }
         val nameList = listOf("首&#12288;页","展&#12288;讯", "馆&#160;藏&#160;精&#160;品", "观&#160;展&#160;须&#160;知")
         tabLayout.addOnTabSelectedListener(object :TabLayout.OnTabSelectedListener{
             override fun onTabReselected(tab: TabLayout.Tab?) {

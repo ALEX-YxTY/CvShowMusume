@@ -1,5 +1,6 @@
 package com.milai.cvshowmusume.activity
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Html
@@ -22,6 +23,7 @@ class GCDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_gc_detail)
         findViewById<TextView>(R.id.tv_back).setOnClickListener { onBackPressed() }
+        findViewById<ImageView>(R.id.component5).setOnClickListener { startActivity(Intent(this,MainActivity::class.java)) }
         tvTitle.text = gcDetail.title
         tvName.text = gcDetail.name
         tvDetail.text = Html.fromHtml(gcDetail.detail)

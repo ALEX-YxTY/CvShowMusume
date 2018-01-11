@@ -58,8 +58,7 @@ class FragmentZX : Fragment(),OnPicClickListener {
         dataList.add(ZxDetail("title5","zb5","cb5","2018-1-6","",R.drawable.zx_5))
         dataList.mapTo(picList) { it.url }
         vp?.adapter = PicAdapter(this.activity!!, picList, this)
-        vp?.pageMargin = 50
-        vp?.offscreenPageLimit = 3
+        vp?.pageMargin = 40
         vp?.addOnPageChangeListener(object :ViewPager.OnPageChangeListener{
             override fun onPageScrollStateChanged(state: Int) {
             }

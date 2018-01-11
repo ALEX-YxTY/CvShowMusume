@@ -23,6 +23,7 @@
 
         
         <ImageView
+            android:id="@+id/component5"
             android:layout_toRightOf="@id/iv_logo"
             android:layout_marginLeft="10dp"
             android:layout_centerVertical="true"

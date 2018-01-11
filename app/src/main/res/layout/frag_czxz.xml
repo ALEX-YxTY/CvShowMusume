@@ -4,8 +4,8 @@
     android:layout_height="match_parent">
     <TextView
         android:id="@+id/component1"
-        android:layout_marginTop="60dp"
-        android:textSize="35sp"
+        android:layout_marginTop="40dp"
+        android:textSize="32sp"
         android:textColor="@color/tv_grey"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -27,17 +27,17 @@
             android:textColor="@color/tv_grey"
             android:textSize="11sp"
             android:layout_marginLeft="30dp"
-            android:text="sdflkjlksfjklsdjfljlksdjfljsldfjlkjsdlkfjlksdjflkjsldjflksdjlfjlskdjflkjsdlfjlksjdflkjsldkfjlskldfjlksdjflkslkdfjlsjdlkfjsjdklflksdjlfk"/>
+            android:text="您好！南京美术馆是您展示艺术创作成果的平台，我们将在接下来的展览筹备期间为您提供尽可能周到而细致的专业服务。为了更好的服务于您的艺术展览前期的准备工作，我们现将南京美术馆的有关具体情况以及展览注意事项说明如下"/>
         <TextView
             android:id="@+id/component3"
-            android:layout_width="200dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:textSize="13sp"
             android:textColor="@color/tv_grey"
             android:layout_marginLeft="30dp"
             android:layout_below="@id/component2"
             android:layout_marginTop="25dp"
-            android:text="sjdfkljsldjfljsldfjlkjsldkfjlsjdlfjlsdjfljklsdjfkldflksjdfsd"/>
+            />
 
         <View
             android:layout_width="6dp"
@@ -52,9 +52,7 @@
             android:textSize="13sp"
             android:textColor="@color/tv_grey"
             android:layout_alignParentRight="true"
-            android:layout_alignTop="@id/component3"
-            android:text="lskjdfjdslkfjlsjdlfkjlsdjfljslkdfjlsdjlfjlsdfljsdlfjlsdjfjlkdjflkjsdflkjlsdjflkdsjflksdklfj"/>
-
+            android:layout_alignTop="@id/component3" />
 
         <View
             android:layout_width="6dp"
@@ -68,14 +66,14 @@
 
         <TextView
             android:id="@+id/component5"
-            android:layout_width="250dp"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:textSize="13sp"
             android:textColor="@color/tv_grey"
             android:layout_marginLeft="30dp"
             android:layout_below="@id/component3"
-            android:layout_marginTop="35dp"
-            android:text="ksdjflksjdlfkjlksdjflkjslkdfjlsjdflkjlskdjfjslkdfjlksdjfddddddddddddddddlskjdflkjslkdjflksjdflkjdsl"/>
+            android:layout_marginTop="30dp"
+            android:text="请艺术家在展览结束之前，提供此次展出的作品图片（限定JEPG格式，每张图片质量不低于2M）以及展览介绍、前言、新闻通稿等文本电子版给南京美术馆留作存档和宣传用途，地址是45419572@QQ.COM。电话：025-84578599（办公室）"/>
 
         <View
             android:layout_width="6dp"
@@ -89,12 +87,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
+        android:textSize="13sp"
         android:textColor="@color/tv_grey"
         android:layout_below="@id/rl_main"
-        android:text="klsdjfljsdlfjlsjdlfjlsdjlfjlsdjfls"
+        android:text="如有其他要求，请与我们联系，我们将竭诚为您提供服务！"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="42dp"
+        android:layout_marginTop="35dp"
         />
 
     <TextView

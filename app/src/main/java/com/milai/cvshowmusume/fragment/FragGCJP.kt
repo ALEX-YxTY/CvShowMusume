@@ -13,6 +13,7 @@ import com.milai.cvshowmusume.R
 import com.milai.cvshowmusume.activity.GCDetailActivity
 import com.milai.cvshowmusume.adapter.OnPicClickListener
 import com.milai.cvshowmusume.adapter.PicAdapter
+import com.milai.cvshowmusume.adapter.PicTransformer
 import com.milai.cvshowmusume.bean.GcjpDetail
 import java.util.ArrayList
 
@@ -46,7 +47,7 @@ class FragGCJP:Fragment(),OnPicClickListener {
 
     private fun initUI() {
         //TODO 获取展讯数据
-        dataList.add(GcjpDetail("title1<br/>asfsdf","name1","add1","",R.drawable.gc_1))
+        dataList.add(GcjpDetail("title1asfsdf","name1","add1","",R.drawable.gc_1))
         dataList.add(GcjpDetail("title2","name2","add2","",R.drawable.gc_2))
         dataList.add(GcjpDetail("title3","name3","add3","",R.drawable.gc_3))
         dataList.add(GcjpDetail("title4","name4","add4","",R.drawable.gc_4))
@@ -59,8 +60,8 @@ class FragGCJP:Fragment(),OnPicClickListener {
 
         dataList.mapTo(picList) { it.url }
         vp?.adapter = PicAdapter(this.activity!!, picList, this)
-        vp?.offscreenPageLimit = 3
-        vp?.pageMargin = 50
+        vp?.pageMargin = 40
+        vp?.setPageTransformer(true,PicTransformer())
         vp?.addOnPageChangeListener(object :ViewPager.OnPageChangeListener{
             override fun onPageScrollStateChanged(state: Int) {
             }

@@ -1,5 +1,6 @@
 package com.milai.cvshowmusume.activity
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Html
@@ -21,6 +22,7 @@ class ZXDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_zx_detail)
         findViewById<TextView>(R.id.tv_back).setOnClickListener { onBackPressed() }
+        findViewById<ImageView>(R.id.component5).setOnClickListener { startActivity(Intent(this,MainActivity::class.java)) }
         tvTitle.text = zx.title
         tvDetail.text = Html.fromHtml(zx.detail)
         Glide.with(this).load(zx.url).into(iv)
