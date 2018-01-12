@@ -4,17 +4,21 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Html
+import android.util.Log
+import android.webkit.WebChromeClient
+import android.webkit.WebView
+import android.webkit.WebViewClient
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.milai.cvshowmusume.R
-import com.milai.cvshowmusume.bean.GcjpDetail
+import com.milai.cvshowmusume.dao.bean.GcjpDetail
 
 class GCDetailActivity : AppCompatActivity() {
 
     private val tvTitle:TextView by lazy{ findViewById<TextView>(R.id.tv_title)}
     private val tvName:TextView by lazy{ findViewById<TextView>(R.id.tv_name)}
-    private val tvDetail:TextView by lazy{ findViewById<TextView>(R.id.tv_detail)}
+    private val wb:WebView by lazy{ findViewById<WebView>(R.id.wb)}
     private val iv:ImageView by lazy { findViewById<ImageView>(R.id.iv)}
 
     private val gcDetail:GcjpDetail by lazy{ intent.getSerializableExtra("gc") as GcjpDetail}
@@ -26,7 +30,9 @@ class GCDetailActivity : AppCompatActivity() {
         findViewById<ImageView>(R.id.component5).setOnClickListener { startActivity(Intent(this,MainActivity::class.java)) }
         tvTitle.text = gcDetail.title
         tvName.text = gcDetail.name
-        tvDetail.text = Html.fromHtml(gcDetail.detail)
-        Glide.with(this).load(gcDetail.url).into(iv)
+        wb.webChromeClient = WebChromeClient()
+        wb.webViewClient = WebViewClient()
+        wb.loadUrl("http://meishuguan.domobile.net/home/Articie/guancang?id=" + gcDetail.id)
+        Glide.with(this).load(gcDetail.img).into(iv)
     }
 }

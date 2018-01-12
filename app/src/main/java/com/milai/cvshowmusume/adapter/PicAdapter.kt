@@ -14,7 +14,7 @@ import com.milai.cvshowmusume.R
  *
  * 主要功能：
  */
-class PicAdapter(val ctx:Context, val dataList:List<Int>, val listener:OnPicClickListener ):PagerAdapter() {
+class PicAdapter(val ctx:Context, val dataList:List<String>, val listener:OnPicClickListener ):PagerAdapter() {
 
     private val glide:RequestManager by lazy { Glide.with(ctx) }
 

@@ -9,12 +9,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import com.milai.cvshowmusume.R
 import com.milai.cvshowmusume.activity.GCDetailActivity
 import com.milai.cvshowmusume.adapter.OnPicClickListener
 import com.milai.cvshowmusume.adapter.PicAdapter
 import com.milai.cvshowmusume.adapter.PicTransformer
-import com.milai.cvshowmusume.bean.GcjpDetail
+import com.milai.cvshowmusume.dao.HttpApiClient
+import com.milai.cvshowmusume.dao.HttpResultFunc
+import com.milai.cvshowmusume.dao.HttpRetrofit
+import com.milai.cvshowmusume.dao.bean.GcjpDetail
+import com.milai.cvshowmusume.dao.bean.ZxDetail
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.disposables.Disposable
+import io.reactivex.schedulers.Schedulers
 import java.util.ArrayList
 
 /**
@@ -30,8 +39,11 @@ class FragGCJP:Fragment(),OnPicClickListener {
     var tvAdd: TextView? = null
     var vp: ViewPager? = null
 
+    val httpRetrofit: HttpRetrofit by lazy{ HttpApiClient.retrofit()}
+    val disposal: CompositeDisposable by lazy { CompositeDisposable() }
+
     private val dataList: ArrayList<GcjpDetail> by lazy { ArrayList<GcjpDetail>() }
-    private val picList: ArrayList<Int> by lazy { ArrayList<Int>() }
+    private val picList: ArrayList<String> by lazy { ArrayList<String>() }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         if (fragView == null) {
@@ -46,47 +58,59 @@ class FragGCJP:Fragment(),OnPicClickListener {
     }
 
     private fun initUI() {
-        //TODO 获取展讯数据
-        dataList.add(GcjpDetail("title1asfsdf","name1","add1","",R.drawable.gc_1))
-        dataList.add(GcjpDetail("title2","name2","add2","",R.drawable.gc_2))
-        dataList.add(GcjpDetail("title3","name3","add3","",R.drawable.gc_3))
-        dataList.add(GcjpDetail("title4","name4","add4","",R.drawable.gc_4))
-        dataList.add(GcjpDetail("title5","name5","add5","",R.drawable.gc_5))
-        dataList.add(GcjpDetail("title6","name6","add6","",R.drawable.gc_6))
-        dataList.add(GcjpDetail("title7","name7","add7","",R.drawable.gc_7))
-        dataList.add(GcjpDetail("title8","name8","add8","",R.drawable.gc_8))
-        dataList.add(GcjpDetail("title9","name9","add9","",R.drawable.gc_9))
-        dataList.add(GcjpDetail("title10","name10","add10","",R.drawable.gc_10))
+    //TODO 获取展讯数据
+    httpRetrofit.getGCList().subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .map(HttpResultFunc())
+            .subscribe({
+                //onNext
+                result:List<GcjpDetail> ->
+                dataList.clear()
+                dataList.addAll(result)
+                dataList.mapTo(picList) { it.img }
+                vp?.adapter = PicAdapter(this.activity!!, picList, this)
+                vp?.pageMargin = 40
+                vp?.setPageTransformer(true,PicTransformer())
+                vp?.addOnPageChangeListener(object :ViewPager.OnPageChangeListener{
+                    override fun onPageScrollStateChanged(state: Int) {
+                    }
 
-        dataList.mapTo(picList) { it.url }
-        vp?.adapter = PicAdapter(this.activity!!, picList, this)
-        vp?.pageMargin = 40
-        vp?.setPageTransformer(true,PicTransformer())
-        vp?.addOnPageChangeListener(object :ViewPager.OnPageChangeListener{
-            override fun onPageScrollStateChanged(state: Int) {
-            }
+                    override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
+                    }
 
-            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
-            }
-
-            override fun onPageSelected(position: Int) {
-                showPosition(position)
-            }
-        })
-        vp?.currentItem = 0
-        showPosition(0)
+                    override fun onPageSelected(position: Int) {
+                        showPosition(position)
+                    }
+                })
+                vp?.currentItem = 0
+                showPosition(0)
+            },{
+                //onError
+                e:Throwable ->
+                e.printStackTrace()
+                Toast.makeText(activity,"网络错误，请稍后重试", Toast.LENGTH_SHORT).show()
+            },{
+                //onComplete
+            },{
+                t: Disposable -> disposal.add(t)
+            })
     }
 
     private fun showPosition(position: Int) {
         val gcDetail = dataList[position]
-        tvTitle?.text = Html.fromHtml("《"+gcDetail.title+"》")
+        tvTitle?.text = Html.fromHtml(gcDetail.title)
         tvName?.text = gcDetail.name
-        tvAdd?.text = gcDetail.add
+        tvAdd?.text = gcDetail.address
     }
 
     override fun onPicClick(index: Int) {
         val intent = Intent(activity, GCDetailActivity::class.java)
         intent.putExtra("gc",dataList[index])
         startActivity(intent)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        disposal.clear()
     }
 }

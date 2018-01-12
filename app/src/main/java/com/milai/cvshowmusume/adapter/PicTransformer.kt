@@ -15,7 +15,7 @@ class PicTransformer : ViewPager.PageTransformer {
         var alpha = 0f
         if (position in 0.0..1.0) {
             alpha = 1 - position/2
-        } else if (-1 < position && position < 0) {
+        } else if (-1 <= position && position < 0) {
             alpha = position/2 + 1
         }
         page.alpha = alpha

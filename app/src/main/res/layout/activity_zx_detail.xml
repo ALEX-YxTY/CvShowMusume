@@ -49,22 +49,22 @@
             android:layout_marginTop="100dp"
             android:text="lskjdflksjdlkf"/>
 
-        <ScrollView
+        <WebView
+            android:id="@+id/wb"
             android:layout_width="230dp"
             android:layout_height="360dp"
             android:layout_below="@id/tv_title"
             android:layout_marginTop="60dp"
             android:scrollbars="none"
-            android:background="#2200ff00"
             >
-            <TextView
-                android:id="@+id/tv_detail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="lsjflksjdlflsldfj"
-                android:textColor="@color/tv_grey"/>
-        </ScrollView>
+            <!--<TextView-->
+                <!--android:id="@+id/tv_detail"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="14sp"-->
+                <!--android:text="lsjflksjdlflsldfj"-->
+                <!--android:textColor="@color/tv_grey"/>-->
+        </WebView>
 
 
 

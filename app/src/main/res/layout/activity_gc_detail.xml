@@ -59,22 +59,21 @@
             android:text="lsdjfl"
             android:textColor="@color/tv_grey"/>
 
-        <ScrollView
+        <WebView
+            android:id="@+id/wb"
             android:layout_width="230dp"
             android:layout_height="360dp"
             android:layout_below="@id/tv_name"
             android:layout_marginTop="20dp"
-            android:scrollbars="none"
-            android:background="#22ff0000">
+            android:scrollbars="none">
 
-            <TextView
-                android:id="@+id/tv_detail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="lsjflksjdlflsldfj"
-                android:textColor="@color/tv_grey"/>
-        </ScrollView>
+            <!--<TextView-->
+                <!--android:id="@+id/tv_detail"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="14sp"-->
+                <!--android:textColor="@color/tv_grey"/>-->
+        </WebView>
 
 
 
