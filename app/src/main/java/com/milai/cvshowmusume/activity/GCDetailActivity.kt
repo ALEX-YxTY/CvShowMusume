@@ -34,5 +34,10 @@ class GCDetailActivity : AppCompatActivity() {
         wb.webViewClient = WebViewClient()
         wb.loadUrl("http://meishuguan.domobile.net/home/Articie/guancang?id=" + gcDetail.id)
         Glide.with(this).load(gcDetail.img).into(iv)
+        iv.setOnClickListener {
+            val intent = Intent(this, PicDetailActivity::class.java)
+            intent.putExtra("pic", gcDetail.img)
+            startActivity(intent)
+        }
     }
 }

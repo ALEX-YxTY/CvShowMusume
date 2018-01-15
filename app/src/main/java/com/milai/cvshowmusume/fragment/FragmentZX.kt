@@ -15,6 +15,7 @@ import com.milai.cvshowmusume.R
 import com.milai.cvshowmusume.activity.ZXDetailActivity
 import com.milai.cvshowmusume.adapter.OnPicClickListener
 import com.milai.cvshowmusume.adapter.PicAdapter
+import com.milai.cvshowmusume.adapter.PicTransformer
 import com.milai.cvshowmusume.dao.HttpApiClient
 import com.milai.cvshowmusume.dao.HttpResultFunc
 import com.milai.cvshowmusume.dao.HttpRetrofit
@@ -73,7 +74,7 @@ class FragmentZX : Fragment(),OnPicClickListener {
                     dataList.addAll(result)
                     dataList.mapTo(picList) { it.img }
                     vp?.adapter = PicAdapter(this.activity!!, picList, this)
-                    vp?.pageMargin = 40
+                    vp?.setPageTransformer(true, PicTransformer())
                     vp?.addOnPageChangeListener(object :ViewPager.OnPageChangeListener{
                         override fun onPageScrollStateChanged(state: Int) {
                         }

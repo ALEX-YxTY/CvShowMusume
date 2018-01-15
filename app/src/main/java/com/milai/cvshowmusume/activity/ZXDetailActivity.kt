@@ -33,5 +33,10 @@ class ZXDetailActivity : AppCompatActivity() {
         wb.webViewClient = WebViewClient()
         wb.loadUrl("http://meishuguan.domobile.net/home/Articie/zhanxun?id=" + zx.id)
         Glide.with(this).load(zx.img).into(iv)
+        iv.setOnClickListener {
+            val intent = Intent(this, PicDetailActivity::class.java)
+            intent.putExtra("pic", zx.img)
+            startActivity(intent)
+        }
     }
 }

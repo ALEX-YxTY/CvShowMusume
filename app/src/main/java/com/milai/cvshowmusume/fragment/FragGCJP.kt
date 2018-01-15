@@ -69,7 +69,6 @@ class FragGCJP:Fragment(),OnPicClickListener {
                 dataList.addAll(result)
                 dataList.mapTo(picList) { it.img }
                 vp?.adapter = PicAdapter(this.activity!!, picList, this)
-                vp?.pageMargin = 40
                 vp?.setPageTransformer(true,PicTransformer())
                 vp?.addOnPageChangeListener(object :ViewPager.OnPageChangeListener{
                     override fun onPageScrollStateChanged(state: Int) {

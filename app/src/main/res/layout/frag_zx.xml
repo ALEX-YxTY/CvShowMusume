@@ -24,7 +24,7 @@
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
-        android:maxWidth="350dp"
+        android:maxWidth="360dp"
         android:layout_height="wrap_content"
         android:textColor="@color/tv_grey"
         android:textSize="18sp"
@@ -34,6 +34,7 @@
     <TextView
         android:id="@+id/tv_zb"
         android:layout_below="@id/tv_title"
+        android:maxWidth="300dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -42,6 +43,7 @@
     <TextView
         android:id="@+id/tv_cb"
         android:layout_below="@id/tv_zb"
+        android:maxWidth="300dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="13sp"
@@ -56,25 +58,14 @@
         android:textSize="13sp"
         android:textColor="@color/tv_grey"/>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="320dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginLeft="430dp"
-        android:clipChildren="false"
-        >
-
-        <android.support.v4.view.ViewPager
-            android:id="@+id/vp"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="260dp"
-            android:clipChildren="false"
-            android:background="@color/tv_grey"
-            />
-
-    </RelativeLayout>
-
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp"
+        android:layout_width="wrap_content"
+        android:layout_height="350dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginLeft="455dp"
+        android:layout_marginRight="240dp"/>
+        <!--android:background="@color/tv_grey"-->
+        />
 
 </RelativeLayout>

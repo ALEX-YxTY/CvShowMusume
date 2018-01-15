@@ -18,7 +18,7 @@
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
-        android:maxWidth="350dp"
+        android:maxWidth="360dp"
         android:layout_height="wrap_content"
         android:textColor="@color/tv_grey"
         android:textSize="18sp"
@@ -42,26 +42,16 @@
         android:textSize="13sp"
         android:textColor="@color/tv_grey"/>
 
-
-    <RelativeLayout
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp"
         android:layout_width="match_parent"
-        android:layout_height="340dp"
-        android:layout_marginLeft="450dp"
+        android:layout_height="370dp"
+        android:layout_marginLeft="490dp"
         android:layout_alignTop="@id/component1"
-        android:layout_marginTop="10dp"
-        android:clipChildren="false"
-        >
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="160dp"/>
+        <!--android:background="@color/tv_grey"-->
+        />
 
-        <android.support.v4.view.ViewPager
-            android:id="@+id/vp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="200dp"
-            android:clipChildren="false"
-            android:background="@color/tv_grey"
-            />
-
-    </RelativeLayout>
 
 </RelativeLayout>

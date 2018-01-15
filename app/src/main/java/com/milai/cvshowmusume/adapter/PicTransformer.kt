@@ -14,11 +14,13 @@ class PicTransformer : ViewPager.PageTransformer {
         //position=-a 移出页  =0 当前页  =a 移入页
         var alpha = 0f
         if (position in 0.0..1.0) {
-            alpha = 1 - position/2
+            alpha = 1 - position
         } else if (-1 <= position && position < 0) {
-            alpha = position/2 + 1
+            alpha = position + 1
         }
         page.alpha = alpha
+        val scaleFactor = 1.05f - Math.abs(position) / 20.0f
+        page.scaleX = scaleFactor
+        page.scaleY = scaleFactor
     }
-
 }
