@@ -29,6 +29,8 @@ class SecondFragment : Fragment(),View.OnClickListener {
             btZx?.text = Html.fromHtml("展&#12288;&#12288;讯")
             btZx?.setOnClickListener(this)
             fragView?.findViewById<Button>(R.id.bt_bzxz)?.setOnClickListener(this)
+            fragView?.findViewById<Button>(R.id.bt_zxzl)?.setOnClickListener(this)
+            fragView?.findViewById<Button>(R.id.bt_jlfw)?.setOnClickListener(this)
         }
         return fragView
     }
@@ -47,6 +49,14 @@ class SecondFragment : Fragment(),View.OnClickListener {
             R.id.bt_bzxz ->{
                 //办展须知
                 intent.putExtra("select", 2)
+            }
+            R.id.bt_zxzl ->{
+                //在线展览
+                intent.putExtra("select", 3)
+            }
+            R.id.bt_jlfw ->{
+                //交流服务
+                intent.putExtra("select", 4)
             }
         }
         activity?.startActivity(intent)
